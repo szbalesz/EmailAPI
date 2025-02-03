@@ -1,4 +1,7 @@
 
+using EmailAPI.Services;
+using EmailAPI.Services.IEmailService;
+
 namespace EmailAPI
 {
     public class Program
@@ -8,7 +11,7 @@ namespace EmailAPI
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
-
+            builder.Services.AddScoped<IEmail, Email>();
             builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
